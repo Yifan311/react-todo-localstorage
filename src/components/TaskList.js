@@ -6,6 +6,8 @@ function TaskList({
   clearAll,
   checkTask,
   visibleTasks,
+  remainingTasks,
+  clearCompleted,
 }) {
   return (
     <div>
@@ -25,6 +27,10 @@ function TaskList({
           Clear all
         </button>
       )}
+      <button onClick={clearCompleted} className="clearCompleted">
+        Clear Completed
+      </button>
+      <p>{remainingTasks} tasks left</p>
     </div>
   );
 }

@@ -63,6 +63,12 @@ function App() {
     );
   };
 
+  const remainingTasks = taskList.filter((task) => !task.done).length;
+
+  const clearCompleted = () => {
+    setTaskList((prev) => prev.filter((task) => !task.done));
+  };
+
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(taskList));
   }, [taskList]);
@@ -109,6 +115,8 @@ function App() {
         clearAll={clearAll}
         checkTask={checkTask}
         visibleTasks={visibleTasks}
+        remainingTasks={remainingTasks}
+        clearCompleted={clearCompleted}
       />
     </div>
   );
