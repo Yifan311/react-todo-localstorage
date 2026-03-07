@@ -2,6 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import { useEffect } from "react";
 import TaskList from "./components/TaskList";
+import FilterButton from "./components/FilterButton";
 
 function App() {
   const [inputText, setInputText] = useState("");
@@ -88,36 +89,23 @@ function App() {
           {editingId ? "Update Task" : "Add Task"}
         </button>
       </div>
-      <div className="filters">
-        <button
-          onClick={() => setFilter("all")}
-          className={filter === "all" ? "active" : ""}
-        >
-          All
-        </button>
-        <button
-          onClick={() => setFilter("active")}
-          className={filter === "active" ? "active" : ""}
-        >
-          Active
-        </button>
-        <button
-          onClick={() => setFilter("completed")}
-          className={filter === "completed" ? "active" : ""}
-        >
-          Completed
-        </button>
-      </div>
-      <TaskList
-        taskList={taskList}
-        editTask={editTask}
-        deleteTask={deleteTask}
-        clearAll={clearAll}
-        checkTask={checkTask}
-        visibleTasks={visibleTasks}
-        remainingTasks={remainingTasks}
-        clearCompleted={clearCompleted}
-      />
+      {taskList.length > 0 && (
+        <FilterButton filter={filter} setFilter={setFilter} />
+      )}
+      {taskList.length > 0 ? (
+        <TaskList
+          taskList={taskList}
+          editTask={editTask}
+          deleteTask={deleteTask}
+          clearAll={clearAll}
+          checkTask={checkTask}
+          visibleTasks={visibleTasks}
+          remainingTasks={remainingTasks}
+          clearCompleted={clearCompleted}
+        />
+      ) : (
+        <p>No tasks yet. Add your first task.</p>
+      )}
     </div>
   );
 }
