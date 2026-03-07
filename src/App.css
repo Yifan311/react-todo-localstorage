@@ -8,27 +8,15 @@
 }
 
 .clearAll {
-  border-color: #b63e35;
+  border-color: #f44336;
   color: black;
 }
 .clearAll:hover {
-  background-color: #b63e35;
+  background-color: #f44336;
   color: white;
 }
-.clearCompleted {
-  border-color: rgb(192, 164, 130);
-}
-.clearCompleted:hover {
-  background-color: rgb(192, 164, 130);
-}
+
 .done {
   text-decoration: line-through;
   opacity: 0.6;
-}
-
-button {
-  margin-left: 6px;
-}
-.filters {
-  margin-top: 10px;
 }
