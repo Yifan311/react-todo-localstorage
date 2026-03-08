@@ -1,5 +1,9 @@
 # Todo List App
 
+## Screenshot
+
+![Todo App Screenshot](docs/images/Screenshot.png)
+
 ## What it is
 
 A simple React-based Todo List application for managing daily tasks.
