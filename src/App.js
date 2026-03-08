@@ -74,6 +74,8 @@ function App() {
     localStorage.setItem("tasks", JSON.stringify(taskList));
   }, [taskList]);
 
+  const hasTasks = taskList.length > 0;
+
   return (
     <div>
       <h1>Todo List</h1>
@@ -89,20 +91,23 @@ function App() {
           {editingId ? "Update Task" : "Add Task"}
         </button>
       </div>
-      {taskList.length > 0 && (
+      {/* {taskList.length > 0 && (
         <FilterButton filter={filter} setFilter={setFilter} />
-      )}
-      {taskList.length > 0 ? (
-        <TaskList
-          taskList={taskList}
-          editTask={editTask}
-          deleteTask={deleteTask}
-          clearAll={clearAll}
-          checkTask={checkTask}
-          visibleTasks={visibleTasks}
-          remainingTasks={remainingTasks}
-          clearCompleted={clearCompleted}
-        />
+      )} */}
+      {hasTasks ? (
+        <>
+          <FilterButton filter={filter} setFilter={setFilter} />
+          <TaskList
+            taskList={taskList}
+            editTask={editTask}
+            deleteTask={deleteTask}
+            clearAll={clearAll}
+            checkTask={checkTask}
+            visibleTasks={visibleTasks}
+            remainingTasks={remainingTasks}
+            clearCompleted={clearCompleted}
+          />
+        </>
       ) : (
         <p>No tasks yet. Add your first task.</p>
       )}
