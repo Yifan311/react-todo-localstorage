@@ -27,9 +27,12 @@ function TaskList({
           Clear all
         </button>
       )}
-      <button onClick={clearCompleted} className="clearCompleted">
-        Clear Completed
-      </button>
+      {taskList.filter((task) => task.done).length > 0 && (
+        <button onClick={clearCompleted} className="clearCompleted">
+          Clear Completed
+        </button>
+      )}
+
       <p>{remainingTasks} tasks left</p>
     </div>
   );
