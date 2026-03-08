@@ -12,7 +12,19 @@ A simple React-based Todo List application for managing daily tasks.
 - Mark tasks as completed
 - Filter tasks (All/Active/Completed)
 - Clear all tasks
+- Clear completed tasks
+- Empty state UI
 - Persists tasks using localStorage
+
+## Demo
+
+Coming soon.
+
+## Tech Stack
+
+- React
+- JavaScript
+- CSS
 
 ## How to run
 
