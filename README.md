@@ -2,7 +2,7 @@
 
 ## Screenshot
 
-![Todo App Screenshot](docs/images/Screenshot.png)
+![Todo App Screenshot](docs/images/screenshot.png)
 
 ## What it is
 
